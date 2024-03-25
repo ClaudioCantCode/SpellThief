@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: d24a6684873204aeab9a2327d12128bf
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - heroProjectilePrefab: {fileID: 4798015253515443859, guid: 73c0da19104a5460d973765d18003f2c, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
