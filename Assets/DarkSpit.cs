@@ -1,18 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DarkSpit : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject darknessPrefab;
+    public Transform darkPos;
+    public float shootInterval = 8f; // Interval between axe shots
+    private float timer;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        // Increment timer
+        timer += Time.deltaTime;
+
+        // Check if it's time to shoot and maximum shots not reached
+        if (timer >= shootInterval)
+        {
+            // Reset timer
+            timer = 0;
+
+            // Shoot axe
+            Shoot();
+        }
+    }
+
+    void Shoot()
+    {
+        Instantiate(darknessPrefab, darkPos.position, Quaternion.identity);
     }
 }
