@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7932502861199866727}
   - component: {fileID: 7537683118790636900}
   - component: {fileID: 4992087749872746696}
+  - component: {fileID: 2059328104959938781}
   m_Layer: 8
   m_Name: Darkness
   m_TagString: Projectile
@@ -144,7 +145,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 768
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -161,5 +162,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d95377426c214f308885fd728b3cd2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 2
+  force: 1.5
   timer: 0
+--- !u!114 &2059328104959938781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7512210948288266492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db7b1f14218104826bc0a8581c5be705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
