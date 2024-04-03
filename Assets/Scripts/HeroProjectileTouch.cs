@@ -22,10 +22,5 @@ public class HeroProjectileTouch : MonoBehaviour
             // Destroy the projectile
             Destroy(gameObject);
         }
-        else if (other.transform.CompareTag("Projectile"))
-        {
-            // Destroy the projectile if it hits the ground or another projectile
-            Destroy(gameObject);
-        }
     }
 }
