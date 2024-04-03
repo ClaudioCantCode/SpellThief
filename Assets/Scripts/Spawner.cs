@@ -60,4 +60,13 @@ public class Spawner : MonoBehaviour
             }
         }
     }
+    private IEnumerator IncreaseEnemySpeed()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(25f);
+            enemySpeed += 0.3f; // Increase enemy speed
+            Debug.Log("Enemy speed increased! New speed: " + enemySpeed);
+        }
+    }
 }

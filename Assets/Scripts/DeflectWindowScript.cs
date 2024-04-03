@@ -150,4 +150,14 @@ public class DeflectWindowScript : MonoBehaviour
 
         return closestEnemy;
     }
+
+    private IEnumerator DecreaseDeflectCooldown()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(40f);
+            deflectCooldown = Mathf.Max(0.2f, deflectCooldown - 0.1f); // Clamp the cooldown to a minimum of 0.2 seconds
+            Debug.Log("Deflect cooldown reduced! New cooldown: " + deflectCooldown);
+        }
+    }
 }

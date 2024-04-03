@@ -364,6 +364,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238747892}
   m_CullTransparentMesh: 1
+--- !u!1 &461721203 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8792555016316989481, guid: dc08e1bb5a79044c497d7b476016584f, type: 3}
+  m_PrefabInstance: {fileID: 1245967338}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &465719140
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,8 +1192,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e3aba915b380499680f28169c233e63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundSpeed: 0.5
-  resetPositionX: -29.7
+  backgroundSpeed: 1
+  resetPositionX: -20.7
 --- !u!1 &1073173397
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,6 +1548,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1935223571}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8792555016316989481, guid: dc08e1bb5a79044c497d7b476016584f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2051349210}
     - targetCorrespondingSourceObject: {fileID: 3352057928652869150, guid: dc08e1bb5a79044c497d7b476016584f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1521924470}
@@ -2478,6 +2486,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3032078334002512491, guid: dc08e1bb5a79044c497d7b476016584f, type: 3}
   m_PrefabInstance: {fileID: 1245967338}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &2051349210
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461721203}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d7fd13e31de434d85b2fb8516d35a53e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2103348326
 GameObject:
   m_ObjectHideFlags: 0
@@ -2687,7 +2716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3589252352157010212, guid: ff605d840d68c472b8ecaeaf1dcad336, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.72
+      value: 28.5
       objectReference: {fileID: 0}
     - target: {fileID: 3589252352157010212, guid: ff605d840d68c472b8ecaeaf1dcad336, type: 3}
       propertyPath: m_LocalPosition.y
