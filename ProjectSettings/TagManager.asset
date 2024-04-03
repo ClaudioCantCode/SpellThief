@@ -15,6 +15,9 @@ TagManager:
   - Boss
   - HeroFinal
   - Life
+  - DeflectButton
+  - ShootButton
+  - JumpButton
   layers:
   - Default
   - TransparentFX
