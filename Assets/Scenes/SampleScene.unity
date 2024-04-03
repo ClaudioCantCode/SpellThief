@@ -1495,7 +1495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3902960954609610922, guid: dc08e1bb5a79044c497d7b476016584f, type: 3}
       propertyPath: m_Color.a
-      value: 0.20392157
+      value: 0.09411765
       objectReference: {fileID: 0}
     - target: {fileID: 4421954514020071044, guid: dc08e1bb5a79044c497d7b476016584f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2026,7 +2026,7 @@ MonoBehaviour:
   - {fileID: 6801376244285179510, guid: 07a0312646ab540c49a6a3cf26302184, type: 3}
   - {fileID: 8709189805534380265, guid: 738d50ef08d824b0bac4e510436747e9, type: 3}
   - {fileID: 9183133033092663189, guid: 575d89837454d4fe0b7ad40e459986bc, type: 3}
-  enemySpawnTime: 2.5
+  enemySpawnTime: 3
   enemySpeed: 1.5
   flyStartX: -3.5
   flyHeight: 6
@@ -2336,7 +2336,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.27058825}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.09411765}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
