@@ -10,6 +10,7 @@ public class DeflectWindowScript : MonoBehaviour
 
     private bool canDeflect = true; // Flag to track if the deflect action is available
     public float deflectCooldown = 1f; // Cooldown duration in seconds
+    public float visibilityDuration = 1f;
 
     private GameManager gameManager; // Reference to the GameManager
 
@@ -17,6 +18,8 @@ public class DeflectWindowScript : MonoBehaviour
     {
         // Find the GameManager object and get its GameManager component
         gameManager = FindObjectOfType<GameManager>();
+
+        StartCoroutine(DecreaseDeflectCooldown());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -65,6 +68,12 @@ public class DeflectWindowScript : MonoBehaviour
 
     private void PerformDeflectionAction()
     {
+
+         // Toggle transparency of objects tagged as "Player"
+        ToggleObjectTransparency("Player", true);
+        // Toggle visibility of objects tagged as "ParryAnim"
+        ToggleObjectVisibility("ParryAnim", true);
+
         // Disable deflect action and start cooldown
         canDeflect = false;
         StartCoroutine(StartCooldown());
@@ -81,12 +90,62 @@ public class DeflectWindowScript : MonoBehaviour
 
         // Clear the list of enemy projectiles
         Projectiles.Clear();
+
+       StartCoroutine(RevertVisibility());
     }
 
     private IEnumerator StartCooldown()
     {
         yield return new WaitForSeconds(deflectCooldown);
         canDeflect = true; // Enable deflect action after cooldown
+    }
+
+    private IEnumerator RevertVisibility()
+    {
+        yield return new WaitForSeconds(visibilityDuration);
+
+        // Revert transparency of objects tagged as "Player"
+        ToggleObjectTransparency("Player", false);
+        // Revert visibility of objects tagged as "ParryAnim"
+        ToggleObjectVisibility("ParryAnim", false);
+    }
+
+    private void ToggleObjectTransparency(string tag, bool transparent)
+    {
+        GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
+        foreach (GameObject obj in objects)
+        {
+            Renderer renderer = obj.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                if (transparent)
+                {
+                    Color color = renderer.material.color;
+                    color.a = 0.5f; // Set transparency to 50%
+                    renderer.material.color = color;
+                }
+                else
+                {
+                    Color color = renderer.material.color;
+                    color.a = 1f; // Set transparency to 100%
+                    renderer.material.color = color;
+                }
+            }
+        }
+
+    }
+
+         private void ToggleObjectVisibility(string tag, bool visible)
+    {
+        GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
+        foreach (GameObject obj in objects)
+        {
+            Renderer renderer = obj.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                renderer.enabled = visible;
+            }
+        }
     }
 
     private void Shoot()
@@ -151,7 +210,7 @@ public class DeflectWindowScript : MonoBehaviour
         return closestEnemy;
     }
 
-    private IEnumerator DecreaseDeflectCooldown()
+       private IEnumerator DecreaseDeflectCooldown()
     {
         while (true)
         {
@@ -161,3 +220,4 @@ public class DeflectWindowScript : MonoBehaviour
         }
     }
 }
+

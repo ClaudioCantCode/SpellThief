@@ -18,6 +18,7 @@ TagManager:
   - DeflectButton
   - ShootButton
   - JumpButton
+  - ParryAnim
   layers:
   - Default
   - TransparentFX
