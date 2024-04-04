@@ -68,6 +68,7 @@ public class DeflectWindowScript : MonoBehaviour
 
     private void PerformDeflectionAction()
     {
+      Debug.Log("Performing Deflection Action");
 
          // Toggle transparency of objects tagged as "Player"
         ToggleObjectTransparency("Player", true);
@@ -102,6 +103,8 @@ public class DeflectWindowScript : MonoBehaviour
 
     private IEnumerator RevertVisibility()
     {
+       Debug.Log("Waiting for " + visibilityDuration + " seconds before reverting visibility.");
+       
         yield return new WaitForSeconds(visibilityDuration);
 
         // Revert transparency of objects tagged as "Player"
@@ -121,7 +124,7 @@ public class DeflectWindowScript : MonoBehaviour
                 if (transparent)
                 {
                     Color color = renderer.material.color;
-                    color.a = 0.5f; // Set transparency to 50%
+                    color.a = 0f; // Set transparency to 50%
                     renderer.material.color = color;
                 }
                 else
@@ -135,18 +138,22 @@ public class DeflectWindowScript : MonoBehaviour
 
     }
 
-         private void ToggleObjectVisibility(string tag, bool visible)
+private void ToggleObjectVisibility(string tag, bool visible)
+{
+    GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
+    foreach (GameObject obj in objects)
     {
-        GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
-        foreach (GameObject obj in objects)
+        Renderer renderer = obj.GetComponent<Renderer>();
+        if (renderer != null)
         {
-            Renderer renderer = obj.GetComponent<Renderer>();
-            if (renderer != null)
-            {
-                renderer.enabled = visible;
-            }
+            Color color = renderer.material.color;
+            color.a = visible ? 1f : 0f; // Set alpha to 1 if visible, 0.1 if invisible
+            renderer.material.color = color;
         }
     }
+}
+
+
 
     private void Shoot()
 {

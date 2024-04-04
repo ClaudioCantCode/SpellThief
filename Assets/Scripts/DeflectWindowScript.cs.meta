@@ -5,6 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - heroProjectilePrefab: {fileID: 4798015253515443859, guid: 73c0da19104a5460d973765d18003f2c, type: 3}
+  - heroFinalPrefab: {fileID: 5462597103007641016, guid: b9169ac1923794c319891d00ef5ab67b, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
